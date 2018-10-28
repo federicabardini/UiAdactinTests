@@ -1,13 +1,13 @@
 package it.fedeb.uiadactintests.Steps;
 
-import it.fedeb.uiadactintests.DriverFactory;
-import it.fedeb.uiadactintests.Pages.SearchHotelPage;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import it.fedeb.uiadactintests.DriverFactory;
+import it.fedeb.uiadactintests.Pages.SearchHotelPage;
 import org.openqa.selenium.WebDriver;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -58,14 +58,14 @@ public class SearchHotelSteps {
         page.insertAdultsRoom(adultNumber);
     }
 
-    @And("^I inserted Check in date: \"([^\"]*)\"$")
-    public void set_checkin_date(String checkInDate) {
-        page.insertCheckInDate(checkInDate);
+    @And("^I inserted Check in within (\\d+) days$")
+    public void set_checkin_date(int daysToAddCheckIn) {
+        page.insertCheckInDate(daysToAddCheckIn);
     }
 
-    @And("^I inserted Check out date: \"([^\"]*)\"$")
-    public void set_checkout_date(String checkOutDate) {
-        page.insertCheckOutDate(checkOutDate);
+    @And("^I inserted Check out within (\\d+) days$")
+    public void set_checkout_date(int daysToAddCheckOut) {
+        page.insertCheckOutDate(daysToAddCheckOut);
     }
 
     @When("^I click the Search Button$")

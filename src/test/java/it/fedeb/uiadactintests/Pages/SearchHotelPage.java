@@ -1,5 +1,6 @@
 package it.fedeb.uiadactintests.Pages;
 
+import it.fedeb.uiadactintests.helpers.DateHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,22 +39,22 @@ public class SearchHotelPage {
         adultsNumberList.selectByValue(adultsNumber);
     }
 
-    public void insertCheckInDate(String checkInDate) {
-        WebElement checkInBox = driver.findElement(By.id("datepick_in"));
-        checkInBox.clear();
-        checkInBox.sendKeys(checkInDate);
-        //TODO generate automatic sysdate+n date
+    public void insertCheckInDate(int daysToAdd) {
+        this.insertDate(daysToAdd, "datepick_in");
     }
 
-    public void insertCheckOutDate(String checkOutDate) {
-        WebElement checkOutBox = driver.findElement(By.id("datepick_out"));
-        checkOutBox.clear();
-        checkOutBox.sendKeys(checkOutDate);
-        //TODO generate automatic sysdate+n date
+    public void insertCheckOutDate(int daysToAdd) {
+        this.insertDate(daysToAdd, "datepick_out");
     }
 
     public void clickSearchButton() {
         WebElement searchButton = driver.findElement(By.id("Submit"));
         searchButton.click();
+    }
+
+    private void insertDate(int daysToAdd, String id) {
+        WebElement dateBox = driver.findElement(By.id(id));
+        dateBox.clear();
+        dateBox.sendKeys(DateHelper.getDateAddingDays(daysToAdd));
     }
 }

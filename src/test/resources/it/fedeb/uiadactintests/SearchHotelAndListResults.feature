@@ -10,8 +10,8 @@ Feature: Adactin Search Hotel and List Results
   Scenario: Search hotel&list results with multiple rooms, days reservation and hotel choices
     Given I inserted Location: "New York"
     And I inserted Number of Rooms: "10"
-    And I inserted Check in date: "17/12/2018"
-    And I inserted Check out date: "20/12/2018"
+    And I inserted Check in within 2 days
+    And I inserted Check out within 5 days
     And I inserted Adults per room: "3"
     When I click the Search Button
     Then Select Hotel page is displayed
