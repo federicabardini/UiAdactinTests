@@ -15,4 +15,6 @@ Feature: Adactin Search Hotel and List Results
     And I inserted Adults per room: "3"
     When I click the Search Button
     Then Select Hotel page is displayed
-    And I check the data in the page are correct
+    And I check that there are more than one result displayed
+    #TODO And I check that all the results displayed have location "New York", 10 rooms booked, 3 days stay
+    #TODO And I check that "Hotel Creek" is one of the results with 3750 AUD total price

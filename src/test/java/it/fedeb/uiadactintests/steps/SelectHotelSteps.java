@@ -1,15 +1,16 @@
 package it.fedeb.uiadactintests.steps;
 
-import it.fedeb.uiadactintests.DriverFactory;
-import it.fedeb.uiadactintests.pages.SelectHotelPage;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import it.fedeb.uiadactintests.DriverFactory;
+import it.fedeb.uiadactintests.pages.SelectHotelPage;
 import org.openqa.selenium.WebDriver;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.greaterThan;
 
 public class SelectHotelSteps {
 
@@ -35,9 +36,10 @@ public class SelectHotelSteps {
         assertThat("I am arrived in Select Hotel Page", isSelectHotelPage, equalTo(true));
     }
 
-    @And("^I check the data in the page are correct$")
+    @And("^I check that there are more than one result displayed$")
     public void check_hotel_list_results() {
-        //TODO
+        int resultHotelCount = page.countHotelRowsListed();
+        assertThat("There is more than one result displayed", resultHotelCount, greaterThan(1));
     }
 
 }
