@@ -1,4 +1,4 @@
-package it.fedeb.uiadactintests.Steps;
+package it.fedeb.uiadactintests.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -7,7 +7,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import it.fedeb.uiadactintests.DriverFactory;
-import it.fedeb.uiadactintests.Pages.SearchHotelPage;
+import it.fedeb.uiadactintests.pages.SearchHotelPage;
 import org.openqa.selenium.WebDriver;
 
 import static org.hamcrest.MatcherAssert.assertThat;

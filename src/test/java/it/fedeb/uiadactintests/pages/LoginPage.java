@@ -1,4 +1,4 @@
-package it.fedeb.uiadactintests.Pages;
+package it.fedeb.uiadactintests.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

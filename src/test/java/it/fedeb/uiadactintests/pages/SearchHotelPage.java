@@ -1,4 +1,4 @@
-package it.fedeb.uiadactintests.Pages;
+package it.fedeb.uiadactintests.pages;
 
 import it.fedeb.uiadactintests.helpers.DateHelper;
 import org.openqa.selenium.By;

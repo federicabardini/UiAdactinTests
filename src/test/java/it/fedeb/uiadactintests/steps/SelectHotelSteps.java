@@ -1,7 +1,7 @@
-package it.fedeb.uiadactintests.Steps;
+package it.fedeb.uiadactintests.steps;
 
 import it.fedeb.uiadactintests.DriverFactory;
-import it.fedeb.uiadactintests.Pages.SelectHotelPage;
+import it.fedeb.uiadactintests.pages.SelectHotelPage;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
