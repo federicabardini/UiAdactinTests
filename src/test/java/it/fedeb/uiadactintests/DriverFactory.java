@@ -1,4 +1,4 @@
-package com.fb.uiadactintests;
+package it.fedeb.uiadactintests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -1,4 +1,4 @@
-package com.fb.uiadactintests;
+package it.fedeb.uiadactintests;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

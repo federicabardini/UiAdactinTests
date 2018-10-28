@@ -1,7 +1,7 @@
-package com.fb.uiadactintests.Steps;
+package it.fedeb.uiadactintests.Steps;
 
-import com.fb.uiadactintests.DriverFactory;
-import com.fb.uiadactintests.Pages.LoginPage;
+import it.fedeb.uiadactintests.DriverFactory;
+import it.fedeb.uiadactintests.Pages.LoginPage;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
