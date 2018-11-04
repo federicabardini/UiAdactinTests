@@ -17,4 +17,4 @@ Feature: Adactin Search Hotel and List Results
     Then Select Hotel page is displayed
     And I check that there are more than one result displayed
     And I check that all the results displayed have location "New York", "10 Rooms" booked, "3 Days" stay
-    #TODO And I check that "Hotel Creek" is one of the results with 3750 AUD total price
+    And I check that "Hotel Creek" is one of the results with "AUD $ 3750" total price

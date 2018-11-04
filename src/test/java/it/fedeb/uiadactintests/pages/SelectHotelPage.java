@@ -3,6 +3,8 @@ package it.fedeb.uiadactintests.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -10,8 +12,12 @@ public class SelectHotelPage {
 
     private WebDriver driver;
 
+    @FindBy(css = "#select_form table.login table")
+    WebElement resultTable;
+
     public SelectHotelPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public boolean isSelectHotelDisplayed() {
@@ -25,13 +31,10 @@ public class SelectHotelPage {
     }
 
     public boolean isSelectedLocation(String expectedLocation) {
-
         return isTheExpectedValueInTableResults(expectedLocation, "td input[name^=\"location\"]");
-
     }
 
-    public boolean isTheRightBookedRoomsNumber(String expectedNumberOfRooms) {
-
+    public boolean isTheSelectedBookedRoomsNumber(String expectedNumberOfRooms) {
         return isTheExpectedValueInTableResults(expectedNumberOfRooms, "td input[name^=\"rooms\"]");
     }
 
@@ -39,15 +42,24 @@ public class SelectHotelPage {
         return isTheExpectedValueInTableResults(expectedDuration, "td input[name^=\"no_days\"]");
     }
 
+    public String getBookingTotalPrice(String hotelName) {
+        String rowNumber = getResultRowNumber(hotelName);
+        return resultTable.findElement(By.cssSelector("td input[name=\"total_price_" + rowNumber + "\"]")).getAttribute("value");
+    }
+
+    private String getResultRowNumber(String hotelName) {
+        String inputName = resultTable.findElement(By.cssSelector("td input[value=\"" + hotelName + "\"]")).getAttribute("name");
+        return inputName.substring("hotel_name_".length());
+    }
+
 
     private boolean isTheExpectedValueInTableResults(String expectedValue, String fieldSelector) {
         boolean isFoundValueEqualToExpectedValue = true;
-        WebElement resultTable = driver.findElement(By.cssSelector("#select_form table.login table"));
         List<WebElement> resultTableRows = resultTable.findElements(By.tagName("tr"));
         for (int i = 1; i < resultTableRows.size(); i++) {
             WebElement expectedValueLocation = resultTableRows.get(i).findElement(By.cssSelector(fieldSelector));
             String foundValue = expectedValueLocation.getAttribute("value");
-            if (!foundValue.equals(expectedValue)) {
+            if (!expectedValue.equals(foundValue)) {
                 isFoundValueEqualToExpectedValue = false;
                 break;
             }

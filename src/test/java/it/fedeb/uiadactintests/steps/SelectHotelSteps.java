@@ -44,17 +44,24 @@ public class SelectHotelSteps {
 
 
     @And("^I check that all the results displayed have location \"([^\"]*)\", \"([^\"]*)\" booked, \"([^\"]*)\" stay$")
-    public void check_location_rooms_stayduration(String location, String bookedRooms, String stayDuration) {
+    public void check_location_rooms_stay_duration(String location, String bookedRooms, String stayDuration) {
         boolean isSelectedLocationDisplayed = page.isSelectedLocation(location);
         assertThat("The location displayed for every result is the one selected in the Search Page", isSelectedLocationDisplayed, equalTo(true));
 
-        boolean isSelectRoomsNumberDisplayed = page.isTheRightBookedRoomsNumber(bookedRooms);
+        boolean isSelectRoomsNumberDisplayed = page.isTheSelectedBookedRoomsNumber(bookedRooms);
         assertThat("The booked rooms number displayed for every result is the one selected in the Search Page", isSelectRoomsNumberDisplayed, equalTo(true));
 
         boolean isSelectDuration = page.isTheSelectedDurationOfTheStay(stayDuration);
         assertThat("The stay duration displayed for every result is the one selected in the Search Page", isSelectDuration, equalTo(true));
 
-        //TODO: pay attention because when one of these 3 checks fails, others check coming after are not executed: maybe is better to split the check step in 3 single steps in the Cucumber Scenario?
     }
+
+    @And("^I check that \"([^\"]*)\" is one of the results with \"([^\"]*)\" total price$")
+    public void check_booking_total_price(String hotelName, String totalPrice) {
+        String totalPriceFound = page.getBookingTotalPrice(hotelName);
+        assertThat("The total price for " + hotelName + " is correct", totalPriceFound, equalTo(totalPrice));
+
+    }
+
 
 }
