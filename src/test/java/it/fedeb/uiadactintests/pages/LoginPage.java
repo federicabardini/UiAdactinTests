@@ -1,5 +1,6 @@
 package it.fedeb.uiadactintests.pages;
 
+import it.fedeb.uiadactintests.helpers.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,8 @@ public class LoginPage {
     }
 
     public void openPage(){
-        driver.get("http://adactin.com/HotelApp/index.php");
+        String loginUrl = new PropertyReader().readProperty("url.login");
+        driver.get(loginUrl);
     }
 
     public void insertUserPassword(String username, String password){
