@@ -1,29 +1,28 @@
 package it.fedeb.uiadactintests.steps;
 
-import it.fedeb.uiadactintests.DriverFactory;
-import it.fedeb.uiadactintests.pages.LoginPage;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
+import it.fedeb.uiadactintests.helpers.BaseSteps;
+import it.fedeb.uiadactintests.pages.LoginPage;
 
-public class LoginSteps {
+public class LoginSteps extends BaseSteps {
 
-    private WebDriver driver;
     private LoginPage page;
 
 
     @Before
     public void setup() {
-        this.driver = DriverFactory.getDriver();
+        super.setup();
         page = new LoginPage(driver);
     }
 
+
     @After
     public void teardown() {
-        DriverFactory.destroyDriver();
+        super.teardown();
     }
 
 

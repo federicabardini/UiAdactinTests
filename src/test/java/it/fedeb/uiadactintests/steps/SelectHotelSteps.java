@@ -4,29 +4,27 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import it.fedeb.uiadactintests.DriverFactory;
+import it.fedeb.uiadactintests.helpers.BaseSteps;
 import it.fedeb.uiadactintests.pages.SelectHotelPage;
-import org.openqa.selenium.WebDriver;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 
-public class SelectHotelSteps {
+public class SelectHotelSteps extends BaseSteps {
 
-    private WebDriver driver;
     private SelectHotelPage page;
 
 
     @Before
     public void setup() {
-        this.driver = DriverFactory.getDriver();
+        super.setup();
         page = new SelectHotelPage(driver);
     }
 
     @After
     public void teardown() {
-        DriverFactory.destroyDriver();
+        super.teardown();
     }
 
 
