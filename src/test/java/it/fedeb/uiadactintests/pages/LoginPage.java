@@ -9,10 +9,24 @@ import org.openqa.selenium.WebElement;
 public class LoginPage {
 
     private WebDriver driver;
+    private static LoginPage page;
 
-    public LoginPage() {
+    private LoginPage() {
         this.driver = DriverFactory.getDriver();
+        System.out.println("LoginPage constructor!");
     }
+
+    public static LoginPage get() {
+        if (page == null) {
+            page = new LoginPage();
+        }
+        return page;
+    }
+
+    public static void destroyPage() {
+        page = null;
+    }
+    //TODO: delete duplicated code
 
     public void openPage(){
         String loginUrl = new PropertyReader().readProperty("url.login");
