@@ -1,5 +1,6 @@
 package it.fedeb.uiadactintests.pages;
 
+import it.fedeb.uiadactintests.DriverFactory;
 import it.fedeb.uiadactintests.helpers.DateHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +11,8 @@ public class SearchHotelPage {
 
     private WebDriver driver;
 
-    public SearchHotelPage(WebDriver driver) {
-        this.driver = driver;
+    public SearchHotelPage() {
+        this.driver = DriverFactory.getDriver();
     }
 
 

@@ -1,5 +1,6 @@
 package it.fedeb.uiadactintests.pages;
 
+import it.fedeb.uiadactintests.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,8 +16,8 @@ public class SelectHotelPage {
     @FindBy(css = "#select_form table.login table")
     WebElement resultTable;
 
-    public SelectHotelPage(WebDriver driver) {
-        this.driver = driver;
+    public SelectHotelPage() {
+        this.driver = DriverFactory.getDriver();
         PageFactory.initElements(driver, this);
     }
 

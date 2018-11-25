@@ -1,32 +1,25 @@
 package it.fedeb.uiadactintests.steps;
 
-import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import it.fedeb.uiadactintests.helpers.BaseSteps;
 import it.fedeb.uiadactintests.pages.SearchHotelPage;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class SearchHotelSteps extends BaseSteps {
+public class SearchHotelSteps {
 
     private SearchHotelPage page;
 
 
     @Before
     public void setup() {
-        super.setup();
-        page = new SearchHotelPage(driver);
+        page = new SearchHotelPage();
     }
 
-    @After
-    public void teardown() {
-        super.teardown();
-    }
 
 
     @Then("^Search Hotel page appears$")

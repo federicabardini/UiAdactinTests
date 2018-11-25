@@ -1,28 +1,18 @@
 package it.fedeb.uiadactintests.steps;
 
-import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
-import it.fedeb.uiadactintests.helpers.BaseSteps;
 import it.fedeb.uiadactintests.pages.LoginPage;
 
-public class LoginSteps extends BaseSteps {
+public class LoginSteps {
 
     private LoginPage page;
 
-
     @Before
     public void setup() {
-        super.setup();
-        page = new LoginPage(driver);
-    }
-
-
-    @After
-    public void teardown() {
-        super.teardown();
+        page = new LoginPage();
     }
 
 
