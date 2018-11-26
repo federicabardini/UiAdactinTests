@@ -20,7 +20,6 @@ public class PropertyReader {
         } catch (IOException e) {
             e.printStackTrace();
             //TODO: handle config file not found
-            //TODO: add a readme file for test runs
         }
     }
 
