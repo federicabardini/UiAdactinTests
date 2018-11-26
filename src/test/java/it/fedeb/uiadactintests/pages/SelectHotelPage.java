@@ -17,18 +17,12 @@ public class SelectHotelPage {
     @FindBy(css = "#select_form table.login table")
     WebElement resultTable;
 
-    private SelectHotelPage() {
+    protected SelectHotelPage() {
         this.driver = DriverFactory.getDriver();
         PageFactory.initElements(driver, this);
         System.out.println("SelectHotelPage constructor!");
     }
 
-    public static SelectHotelPage get() {
-        if (page == null) {
-            page = new SelectHotelPage();
-        }
-        return page;
-    }
 
     public static void destroyPage() {
         page = null;

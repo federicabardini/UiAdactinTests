@@ -12,17 +12,11 @@ public class SearchHotelPage {
     private WebDriver driver;
     private static SearchHotelPage page;
 
-    private SearchHotelPage() {
+    protected SearchHotelPage() {
         this.driver = DriverFactory.getDriver();
         System.out.println("SearchHotelPage constructor!");
     }
 
-    public static SearchHotelPage get() {
-        if (page == null) {
-            page = new SearchHotelPage();
-        }
-        return page;
-    }
 
     public static void destroyPage() {
         page = null;

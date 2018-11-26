@@ -11,17 +11,11 @@ public class LoginPage {
     private WebDriver driver;
     private static LoginPage page;
 
-    private LoginPage() {
+    protected LoginPage() {
         this.driver = DriverFactory.getDriver();
         System.out.println("LoginPage constructor!");
     }
 
-    public static LoginPage get() {
-        if (page == null) {
-            page = new LoginPage();
-        }
-        return page;
-    }
 
     public static void destroyPage() {
         page = null;
