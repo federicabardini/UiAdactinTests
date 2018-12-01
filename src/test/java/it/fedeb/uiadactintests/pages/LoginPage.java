@@ -1,6 +1,6 @@
 package it.fedeb.uiadactintests.pages;
 
-import it.fedeb.uiadactintests.DriverFactory;
+import it.fedeb.uiadactintests.helpers.DriverFactory;
 import it.fedeb.uiadactintests.helpers.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

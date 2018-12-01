@@ -1,4 +1,4 @@
-package it.fedeb.uiadactintests;
+package it.fedeb.uiadactintests.helpers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
