@@ -10,18 +10,11 @@ import org.openqa.selenium.support.ui.Select;
 public class SearchHotelPage {
 
     private WebDriver driver;
-    private static SearchHotelPage page;
 
     protected SearchHotelPage() {
         this.driver = DriverFactory.getDriver();
-        System.out.println("SearchHotelPage constructor!");
     }
 
-
-    public static void destroyPage() {
-        page = null;
-    }
-    //TODO: delete duplicated code
 
     public boolean isSearchHotelPage() {
         return driver.getTitle().contains("AdactIn.com - Search Hotel");

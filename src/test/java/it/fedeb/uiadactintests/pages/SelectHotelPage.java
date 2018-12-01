@@ -12,7 +12,6 @@ import java.util.List;
 public class SelectHotelPage {
 
     private WebDriver driver;
-    private static SelectHotelPage page;
 
     @FindBy(css = "#select_form table.login table")
     WebElement resultTable;
@@ -20,14 +19,8 @@ public class SelectHotelPage {
     protected SelectHotelPage() {
         this.driver = DriverFactory.getDriver();
         PageFactory.initElements(driver, this);
-        System.out.println("SelectHotelPage constructor!");
     }
 
-
-    public static void destroyPage() {
-        page = null;
-    }
-    //TODO: delete duplicated code
 
     public boolean isSelectHotelDisplayed() {
         return driver.getTitle().contains("AdactIn.com - Select Hotel");

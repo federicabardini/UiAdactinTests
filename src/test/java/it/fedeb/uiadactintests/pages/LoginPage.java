@@ -9,32 +9,25 @@ import org.openqa.selenium.WebElement;
 public class LoginPage {
 
     private WebDriver driver;
-    private static LoginPage page;
 
     protected LoginPage() {
         this.driver = DriverFactory.getDriver();
-        System.out.println("LoginPage constructor!");
     }
 
 
-    public static void destroyPage() {
-        page = null;
-    }
-    //TODO: delete duplicated code
-
-    public void openPage(){
+    public void openPage() {
         String loginUrl = new PropertyReader().readProperty("url.login");
         driver.get(loginUrl);
     }
 
-    public void insertUserPassword(String username, String password){
+    public void insertUserPassword(String username, String password) {
         WebElement userBox = driver.findElement(By.id("username"));
         WebElement passwordBox = driver.findElement(By.id("password"));
         userBox.sendKeys(username);
         passwordBox.sendKeys(password);
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         WebElement loginButton = driver.findElement(By.id("login"));
         loginButton.click();
     }

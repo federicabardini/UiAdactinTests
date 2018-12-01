@@ -27,8 +27,7 @@ public class LoginSteps {
 
 
     private LoginPage getPage() {
-        String pageType = LoginPage.class.getName();
-        return (LoginPage) PagesFactory.getPage(pageType);
+        return (LoginPage) PagesFactory.getPage(LoginPage.class);
     }
 
 }
