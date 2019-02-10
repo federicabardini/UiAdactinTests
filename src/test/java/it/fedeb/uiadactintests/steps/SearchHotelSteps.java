@@ -55,6 +55,16 @@ public class SearchHotelSteps {
         getPage().clickSearchButton();
     }
 
+    @When("^I search for \"([^\"]*)\" rooms in an hotel in \"([^\"]*)\" with check-in in (\\d+) days and check-out in (\\d+) days$")
+    public void search_a_hotel(String roomsNumber, String location, int daysToAddCheckIn, int daysToAddCheckOut) {
+        search_hotel();
+        insert_rooms_number(roomsNumber);
+        insert_location(location);
+        set_checkin_date(daysToAddCheckIn);
+        set_checkout_date(daysToAddCheckOut);
+        click_search_button();
+    }
+
 
     private SearchHotelPage getPage() {
         return (SearchHotelPage) PagesFactory.getPage(SearchHotelPage.class);

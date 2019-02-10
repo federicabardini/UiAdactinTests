@@ -1,6 +1,7 @@
 package it.fedeb.uiadactintests.steps;
 
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import it.fedeb.uiadactintests.pages.PagesFactory;
 import it.fedeb.uiadactintests.pages.SelectHotelPage;
@@ -43,6 +44,22 @@ public class SelectHotelSteps {
         assertThat("The total price for " + hotelName + " is correct", totalPriceFound, equalTo(totalPrice));
 
     }
+
+
+    @Then("^The Select Hotel page is displayed with all the hotel options available$")
+    public void verify_options_displayed() {
+        select_hotel_page_displayed();
+        check_hotel_list_results();
+    }
+
+    @Given("^I have selected the \"([^\"]*)\" option$")
+    public void select_hotel_option(String hotelName) {
+        getPage().selectHotelOption(hotelName);
+    }
+
+
+
+
 
 
     private SelectHotelPage getPage() {

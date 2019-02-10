@@ -9,6 +9,14 @@ import it.fedeb.uiadactintests.pages.PagesFactory;
 public class LoginSteps {
 
 
+    @Given("^I have done the login with Username \"([^\"]*)\" and Password \"([^\"]*)\"$")
+    public void login_into_application(String username, String password) {
+        launch_the_adactin_application();
+        insert_username_password(username, password);
+        click_login_button();
+    }
+
+
     @Given("^I launched the AdactIn application in the browser$")
     public void launch_the_adactin_application() {
         getPage().openPage();
@@ -24,7 +32,6 @@ public class LoginSteps {
     public void click_login_button() {
         getPage().clickLoginButton();
     }
-
 
     private LoginPage getPage() {
         return (LoginPage) PagesFactory.getPage(LoginPage.class);

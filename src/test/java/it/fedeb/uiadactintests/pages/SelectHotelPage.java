@@ -49,6 +49,15 @@ public class SelectHotelPage {
         return resultTable.findElement(By.cssSelector("td input[name=\"total_price_" + rowNumber + "\"]")).getAttribute("value");
     }
 
+    public void selectHotelOption(String hotelName) {
+        String rowNumber = getResultRowNumber(hotelName);
+        WebElement selectHotelRadioButton = driver.findElement(By.id("radiobutton_" + rowNumber));
+        selectHotelRadioButton.click();
+        WebElement continueButton = driver.findElement(By.id("continue"));
+        continueButton.click();
+    }
+
+
     private String getResultRowNumber(String hotelName) {
         String inputName = resultTable.findElement(By.cssSelector("td input[value=\"" + hotelName + "\"]")).getAttribute("name");
         return inputName.substring("hotel_name_".length());
