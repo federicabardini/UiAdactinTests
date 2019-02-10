@@ -16,11 +16,11 @@ public class ScreenShotHelper {
 
     public static void getScreenshot(Scenario scenario) {
 
-        String fileName = scenario.getName() + "_" + formatLocalDateTimeToString() + ".png";
+        String fileName = formatLocalDateTimeToString() + "_" + scenario.getName() + ".png";
 
         try {
-            File destiny = new File(".//errorscreenshot//" + fileName);
-            FileUtils.copyFile(((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE), destiny);
+            File destination = new File(".//errorscreenshot//" + fileName);
+            FileUtils.copyFile(((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE), destination);
         } catch (IOException ioe) {
             throw new RuntimeException(ioe);
         }
