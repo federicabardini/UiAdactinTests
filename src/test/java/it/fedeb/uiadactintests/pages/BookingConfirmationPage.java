@@ -12,14 +12,12 @@ public class BookingConfirmationPage {
 
     private WebDriver driver;
 
-    @FindBy(id = "first_name")
-    WebElement firstNameBox;
 
-    @FindBy(id = "last_name")
-    WebElement lastNameBox;
+    @FindBy(id = "room_type")
+    WebElement roomTypeBox;
 
-    @FindBy(id = "address")
-    WebElement addressBox;
+    @FindBy(id = "final_price")
+    WebElement finalPriceBox;
 
     @FindBy(id = "order_no")
     WebElement orderNumberBox;
@@ -38,14 +36,15 @@ public class BookingConfirmationPage {
 
 
     public String getOrderNumber() {
-
         return orderNumberBox.getAttribute("value");
+    }
 
-        /*firstNameBox.sendKeys("Mario");
-        lastNameBox.sendKeys("Rossi");
-        addressBox.sendKeys("Viale Ripamonti 64, Milano");
+    public String getRoomType() {
+        return roomTypeBox.getAttribute("value");
+    }
 
-*/
+    public String getFinalPrice() {
+        return finalPriceBox.getAttribute("value");
     }
 
 

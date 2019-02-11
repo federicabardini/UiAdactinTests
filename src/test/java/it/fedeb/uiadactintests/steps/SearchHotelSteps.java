@@ -58,6 +58,7 @@ public class SearchHotelSteps {
     @When("^I search for \"([^\"]*)\" rooms in an hotel in \"([^\"]*)\" with check-in in (\\d+) days and check-out in (\\d+) days$")
     public void search_a_hotel(String roomsNumber, String location, int daysToAddCheckIn, int daysToAddCheckOut) {
         search_hotel();
+        getPage().insertRoomType();
         insert_rooms_number(roomsNumber);
         insert_location(location);
         set_checkin_date(daysToAddCheckIn);

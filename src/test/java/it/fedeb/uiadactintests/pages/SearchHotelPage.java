@@ -30,6 +30,11 @@ public class SearchHotelPage {
         locationList.selectByValue(location);
     }
 
+    public void insertRoomType() {
+        Select roomType = new Select(driver.findElement(By.id("room_type")));
+        roomType.selectByValue("Double");
+    }
+
     public void insertRoomsNumber(String roomsNumber) {
         Select roomsNumberList = new Select(driver.findElement(By.id("room_nos")));
         roomsNumberList.selectByValue(roomsNumber);
