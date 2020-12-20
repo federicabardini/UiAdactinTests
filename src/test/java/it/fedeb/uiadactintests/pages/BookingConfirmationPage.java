@@ -31,7 +31,7 @@ public class BookingConfirmationPage {
 
     public void waitForBookingConfirmationPageDisplayed() {
         WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.titleIs("AdactIn.com - Hotel Booking Confirmation"));
+        wait.until(ExpectedConditions.titleIs("Adactin.com - Hotel Booking Confirmation"));
     }
 
 

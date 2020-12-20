@@ -3,7 +3,6 @@
 ## Prerequirements
 - Maven installed
 - Chrome installed
-- Chrome driver installed and available in the PATH environment variable
 - At least one build configuration file available in the Resources Package, containing the build url as, for example:
 
     url.login=http://adactin.com/HotelApp/index.php

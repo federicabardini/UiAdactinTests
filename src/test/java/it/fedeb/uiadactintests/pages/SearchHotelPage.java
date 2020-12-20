@@ -17,7 +17,7 @@ public class SearchHotelPage {
 
 
     public boolean isSearchHotelPage() {
-        return driver.getTitle().contains("AdactIn.com - Search Hotel");
+        return driver.getTitle().contains("Adactin.com - Search Hotel");
     }
 
     public boolean isHelloUserMessageDisplayed(String username) {

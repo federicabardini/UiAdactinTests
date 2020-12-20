@@ -23,7 +23,7 @@ public class SelectHotelPage {
 
 
     public boolean isSelectHotelDisplayed() {
-        return driver.getTitle().contains("AdactIn.com - Select Hotel");
+        return driver.getTitle().contains("Adactin.com - Select Hotel");
     }
 
 
