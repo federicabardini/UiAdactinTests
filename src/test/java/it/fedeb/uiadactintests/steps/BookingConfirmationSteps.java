@@ -1,6 +1,6 @@
 package it.fedeb.uiadactintests.steps;
 
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Then;
 import it.fedeb.uiadactintests.pages.BookingConfirmationPage;
 import it.fedeb.uiadactintests.pages.PagesFactory;
 

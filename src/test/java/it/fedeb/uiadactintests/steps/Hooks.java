@@ -1,8 +1,8 @@
 package it.fedeb.uiadactintests.steps;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import it.fedeb.uiadactintests.helpers.DriverFactory;
 import it.fedeb.uiadactintests.helpers.ScreenShotHelper;

@@ -1,8 +1,8 @@
 package it.fedeb.uiadactintests.steps;
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import it.fedeb.uiadactintests.pages.PagesFactory;
 import it.fedeb.uiadactintests.pages.SelectHotelPage;
 
