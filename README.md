@@ -10,8 +10,8 @@
 ## How to run the tests
 Write, through command line, the following command:
 
-    ADACTIN_BUILD=build1 mvn test
+    ADACTIN_BUILD=build-buggy mvn test
 
-where build1 is the build id as identified in the properties file name, as for example:
+where "build-buggy" is the build id as identified in the config properties file name, as for example:
 
-    config-build2.properties
+    src/test/resources/it/fedeb/uiadactintests/config/config-build-buggy.properties

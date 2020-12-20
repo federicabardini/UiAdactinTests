@@ -14,7 +14,7 @@ public class PropertyReader {
 
     private void loadProperties() {
         try {
-            String build = System.getenv("ADACTIN_BUILD") != null ? System.getenv("ADACTIN_BUILD") : "build1";
+            String build = System.getenv("ADACTIN_BUILD") != null ? System.getenv("ADACTIN_BUILD") : "build-stable";
             InputStream inputStream = new FileInputStream("src/test/resources/it/fedeb/uiadactintests/config/config-" + build + ".properties");
             properties.load(inputStream);
         } catch (IOException e) {
