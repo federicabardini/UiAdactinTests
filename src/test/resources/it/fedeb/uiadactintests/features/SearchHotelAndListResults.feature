@@ -1,4 +1,4 @@
-Feature: Adactin Search Hotel and List Results
+Feature: Hotels listing
 
   Background:
     Given I launched the AdactIn application in the browser
@@ -7,7 +7,7 @@ Feature: Adactin Search Hotel and List Results
     Then Search Hotel page appears
     And in the page I find the message Hello "UtenteProva7"!
 
-  Scenario: Search hotel&list results with multiple rooms, days reservation and hotel choices
+  Scenario: Search hotel and list results with multiple rooms, days reservation and hotel choices
     Given I inserted Location: "New York"
     And I inserted Number of Rooms: "10"
     And I inserted Check in within 2 days
