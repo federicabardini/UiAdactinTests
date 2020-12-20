@@ -58,10 +58,6 @@ public class SelectHotelSteps {
     }
 
 
-
-
-
-
     private SelectHotelPage getPage() {
         return (SelectHotelPage) PagesFactory.getPage(SelectHotelPage.class);
     }
